@@ -31,7 +31,8 @@ async def onehot_test(dut):
 async def test_one_hot_encoding(dut):
     """Test FSM One hot Encoding in Design_10111"""
 
-    assert bin(dut.current_state.value.integer).count == 1;  
+    assert bin(dut.current_state.value.integer).count('1') == 1;  
+    f"State {bin(dut.current_state.value.integer)} is not one-hot encoded"
 
 
 def test_onehot_runner():
