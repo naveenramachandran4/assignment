@@ -28,6 +28,11 @@ async def onehot_test(dut):
         A
     ), f"Adder result is incorrect: {dut.X.value} != 15"
 
+async def test_one_hot_encoding(dut):
+    """Test FSM One hot Encoding in Design_10111"""
+
+    assert bin(dut.current_state.value.integer).count == 1;  
+
 
 def test_onehot_runner():
     """Simulate the adder example using the Python runner.
